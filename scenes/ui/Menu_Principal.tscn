@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://byvcukyk3p02h"]
+
+[ext_resource type="Texture2D" uid="uid://bpslketn5knct" path="res://assests/texture/Menu/Pantalla de inicio de Paint War.png" id="1_qpdvi"]
+[ext_resource type="Texture2D" uid="uid://b6ofq40ke5qln" path="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview - copia (2).png" id="2_i5nob"]
+[ext_resource type="Texture2D" uid="uid://j2tbf465bb8" path="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview.png" id="3_wftd5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bj1xx"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v6bag"]
+load_path = "res://.godot/imported/25_mar_2026__12_34_40-removebg-preview - copia.png-9bdbd59ddd5ffcb99ad13d0cfdf7a5bd.ctex"
+
+[node name="Control" type="Control" unique_id=63805122]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1734877158]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5931336, 0.59313357, 0.59313357, 1)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1612255921]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qpdvi")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=835346920]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.48600003
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 126.12799
+offset_top = 150.0
+offset_right = 417.23157
+offset_bottom = 335.15997
+theme_override_constants/separation = -23
+
+[node name="ButtonJugar" type="Button" parent="VBoxContainer" unique_id=1296753914]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bj1xx")
+icon = SubResource("CompressedTexture2D_v6bag")
+flat = true
+
+[node name="ButtonOpciones" type="Button" parent="VBoxContainer" unique_id=758531781]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bj1xx")
+icon = ExtResource("2_i5nob")
+flat = true
+
+[node name="ButtonSalir" type="Button" parent="VBoxContainer" unique_id=1219017531]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bj1xx")
+icon = ExtResource("3_wftd5")
+flat = true
