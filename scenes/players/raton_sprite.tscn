@@ -1,7 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://dwpyk303w04m4"]
+[gd_scene format=3 uid="uid://dwpyk303w04m4"]
 
 [ext_resource type="Texture2D" uid="uid://bh188t687uykk" path="res://assests/sprites/raton_sprites.png" id="1_0pn44"]
-[ext_resource type="Script" uid="uid://dg7ft0qjxc57y" path="res://scenes/players/raton_sprite.gd" id="1_xudk8"]
+[ext_resource type="Script" uid="uid://cugni7rmsfwph" path="res://scripts/sprites/Raton_sprite.gd" id="1_xudk8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xudk8"]
 atlas = ExtResource("1_0pn44")
@@ -50,6 +50,10 @@ region = Rect2(300, 204, 75, 102)
 [sub_resource type="AtlasTexture" id="AtlasTexture_feirb"]
 atlas = ExtResource("1_0pn44")
 region = Rect2(375, 204, 75, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpn3q"]
+atlas = ExtResource("1_0pn44")
+region = Rect2(368, 204, 92, 102)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eo36y"]
 atlas = ExtResource("1_0pn44")
@@ -115,7 +119,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_054xh")
 }],
-"loop": true,
+"loop": false,
 "name": &"Correr",
 "speed": 5.0
 }, {
@@ -136,10 +140,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_feirb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpn3q")
 }],
 "loop": true,
 "name": &"Disparar",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -179,17 +186,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k3qt"]
 size = Vector2(32, 67)
 
-[node name="Raton_sprite" type="Node2D"]
+[node name="Raton_sprite" type="Node2D" unique_id=409222725]
+position = Vector2(572, 349)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1418287853]
 script = ExtResource("1_xudk8")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=703285920]
 position = Vector2(0, -53)
 sprite_frames = SubResource("SpriteFrames_lpn3q")
-animation = &"Caminar_arriba"
-frame_progress = 0.55317533
+animation = &"Normal"
+autoplay = "Normal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1430320095]
 position = Vector2(3, -42)
 shape = SubResource("RectangleShape2D_7k3qt")
+
+[node name="bala" type="Marker2D" parent="CharacterBody2D" unique_id=333812926]
+unique_name_in_owner = true
+position = Vector2(43, -36)
