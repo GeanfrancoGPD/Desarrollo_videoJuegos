@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwpyk303w04m4"]
 
-[ext_resource type="Texture2D" uid="uid://bh188t687uykk" path="res://assests/sprites/raton_sprites.png" id="1_0pn44"]
+[ext_resource type="Texture2D" uid="uid://bh188t687uykk" path="res://assests/sprites/Personajes/raton_sprites.png" id="1_0pn44"]
 [ext_resource type="Script" uid="uid://cugni7rmsfwph" path="res://scripts/sprites/Raton_sprite.gd" id="1_xudk8"]
 [ext_resource type="Texture2D" uid="uid://lyv3e1g3x10u" path="res://assests/sprites/raton_extras.png" id="2_uf3dl"]
 
@@ -207,7 +207,6 @@ animations = [{
 size = Vector2(32, 67)
 
 [node name="Raton_sprite" type="Node2D" unique_id=409222725]
-position = Vector2(572, 349)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1418287853]
 script = ExtResource("1_xudk8")
@@ -220,7 +219,7 @@ autoplay = "Normal"
 frame_progress = 0.2152138
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1430320095]
-position = Vector2(3, -42)
+position = Vector2(-1, -38)
 shape = SubResource("RectangleShape2D_7k3qt")
 
 [node name="bala" type="Marker2D" parent="CharacterBody2D" unique_id=333812926]
