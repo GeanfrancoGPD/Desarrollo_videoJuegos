@@ -2,6 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://bh188t687uykk" path="res://assests/sprites/raton_sprites.png" id="1_0pn44"]
 [ext_resource type="Script" uid="uid://cugni7rmsfwph" path="res://scripts/sprites/Raton_sprite.gd" id="1_xudk8"]
+[ext_resource type="Texture2D" uid="uid://lyv3e1g3x10u" path="res://assests/sprites/raton_extras.png" id="2_uf3dl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k3qt"]
+atlas = ExtResource("2_uf3dl")
+region = Rect2(304, 0, 76, 102)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j0xrr"]
+atlas = ExtResource("2_uf3dl")
+region = Rect2(228, 0, 76, 102)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xudk8"]
 atlas = ExtResource("1_0pn44")
@@ -89,6 +98,17 @@ region = Rect2(150, 306, 75, 102)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lpn3q"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k3qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j0xrr")
+}],
+"loop": true,
+"name": &"Bajar",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xudk8")
@@ -195,8 +215,9 @@ script = ExtResource("1_xudk8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=703285920]
 position = Vector2(0, -53)
 sprite_frames = SubResource("SpriteFrames_lpn3q")
-animation = &"Normal"
+animation = &"Bajar"
 autoplay = "Normal"
+frame_progress = 0.2152138
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1430320095]
 position = Vector2(3, -42)

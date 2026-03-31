@@ -1,7 +1,7 @@
 # movement.gd
 extends Node
 
-class_name Movemento
+class_name Movimiento
 
 var speed : float = 200
 var velocity : Vector2 = Vector2.ZERO
@@ -55,6 +55,8 @@ func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bal
 			animate_sprite.flip_h = direction.x < 0
 		elif direction.y < 0:
 			animate_sprite.play("Caminar_arriba")
+		elif direction.y > 0:
+			animate_sprite.play("Bajar")
 		else:
 			animate_sprite.play("Normal")
 	else:
