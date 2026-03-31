@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh188t687uykk"
-path="res://.godot/imported/raton_sprites.png-8c64762fd1e604ad41483c471f4adb52.ctex"
+uid="uid://c33yrw76em6m0"
+path="res://.godot/imported/Sacos.png-20aee639a63885fd6c52121828d81337.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/sprites/raton_sprites.png"
-dest_files=["res://.godot/imported/raton_sprites.png-8c64762fd1e604ad41483c471f4adb52.ctex"]
+source_file="res://assests/texture/Objetos/Sacos.png"
+dest_files=["res://.godot/imported/Sacos.png-20aee639a63885fd6c52121828d81337.ctex"]
 
 [params]
 

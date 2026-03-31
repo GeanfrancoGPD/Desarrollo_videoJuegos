@@ -1,6 +1,6 @@
-[gd_scene load_steps=25 format=3 uid="uid://dwpyk303w04m4"]
+[gd_scene format=3 uid="uid://dwpyk303w04m4"]
 
-[ext_resource type="Texture2D" uid="uid://bh188t687uykk" path="res://assests/sprites/raton_sprites.png" id="1_0pn44"]
+[ext_resource type="Texture2D" uid="uid://bh188t687uykk" path="res://assests/sprites/Personajes/raton_sprites.png" id="1_0pn44"]
 [ext_resource type="Script" uid="uid://dg7ft0qjxc57y" path="res://scenes/players/raton_sprite.gd" id="1_xudk8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xudk8"]

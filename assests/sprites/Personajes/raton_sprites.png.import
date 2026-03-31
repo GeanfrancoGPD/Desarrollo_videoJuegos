@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3tv2bglwj26o"
-path="res://.godot/imported/obtacles.png-9d0d6ab33201cbd8d214636afc54ed95.ctex"
+uid="uid://bh188t687uykk"
+path="res://.godot/imported/raton_sprites.png-ac61e3975767f46fd981089331c9a8fb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/texture/obtacles.png"
-dest_files=["res://.godot/imported/obtacles.png-9d0d6ab33201cbd8d214636afc54ed95.ctex"]
+source_file="res://assests/sprites/Personajes/raton_sprites.png"
+dest_files=["res://.godot/imported/raton_sprites.png-ac61e3975767f46fd981089331c9a8fb.ctex"]
 
 [params]
 

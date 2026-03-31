@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c6hdnwgskb2c5"]
+
+[ext_resource type="Texture2D" uid="uid://dwgdogd6bckjq" path="res://assests/texture/Objetos/BarrilR.png" id="1_7muva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rp81l"]
+size = Vector2(75, 111)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=348538736]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1926405218]
+position = Vector2(1.5, 0.5)
+shape = SubResource("RectangleShape2D_rp81l")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=213342826]
+texture_filter = 1
+position = Vector2(7, 0)
+texture = ExtResource("1_7muva")

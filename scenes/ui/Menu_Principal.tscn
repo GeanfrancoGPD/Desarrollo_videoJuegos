@@ -72,3 +72,15 @@ theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bj1xx")
 icon = ExtResource("3_wftd5")
 flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1686101438]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 574.0
+offset_right = 247.0
+offset_bottom = 683.0
+
+[node name="Button Creditos" type="Button" parent="VBoxContainer2" unique_id=305702381]
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Creditos"
