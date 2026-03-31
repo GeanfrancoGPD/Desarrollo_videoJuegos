@@ -15,7 +15,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="Paint War: Flag Siege"
-run/main_scene="uid://dwpyk303w04m4"
+run/main_scene="uid://byvcukyk3p02h"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
