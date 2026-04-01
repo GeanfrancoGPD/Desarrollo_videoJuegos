@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://cugni7rmsfwph" path="res://scripts/sprites/Raton_sprite.gd" id="1_xudk8"]
 [ext_resource type="Texture2D" uid="uid://lyv3e1g3x10u" path="res://assests/sprites/raton_extras.png" id="2_uf3dl"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k3qt"]
+size = Vector2(32, 67)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7k3qt"]
 atlas = ExtResource("2_uf3dl")
 region = Rect2(304, 0, 76, 102)
@@ -139,9 +142,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_054xh")
 }],
-"loop": false,
+"loop": true,
 "name": &"Correr",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -198,7 +201,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p6544")
 }],
-"loop": true,
+"loop": false,
 "name": &"Victoria",
 "speed": 5.0
 }]
