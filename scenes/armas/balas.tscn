@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://k10tjljpyygf" path="res://scripts/sprites/balas.gd" id="1_ey8c2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ey8c2"]
-radius = 23.0
+radius = 17.029387
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fpaym"]
 atlas = ExtResource("1_44lbl")
@@ -51,11 +51,11 @@ animations = [{
 script = ExtResource("1_ey8c2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=566684573]
-position = Vector2(6, 1)
+position = Vector2(0, -23)
 shape = SubResource("CircleShape2D_ey8c2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=693737325]
-position = Vector2(25.000008, 1)
+position = Vector2(21, -22)
 scale = Vector2(0.41842845, 0.38449365)
 sprite_frames = SubResource("SpriteFrames_kwbaq")
 animation = &"bala_roja"

@@ -6,7 +6,7 @@ var velocity : Vector2 = Vector2.ZERO
 var shooting_timer : float = 0
 const Balas = preload("res://scenes/armas/balas.tscn")
 
-func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bala: Marker2D) -> Vector2:
+func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bala: Marker2D, Player_nodo: Node) -> Vector2:
 	var direction = Vector2.ZERO
 
 	# MOVIMIENTO
@@ -21,7 +21,7 @@ func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bal
 		velocity = Vector2.ZERO
 		animate_sprite.play("Disparar")
 		var shoot = Balas.instantiate()
-		get_tree().current_scene.add_child(shoot)
+		Player_nodo.get_tree().current_scene.add_child(shoot)
 		shoot.direccion = direction if direction != Vector2.ZERO else Vector2.RIGHT
 		if direction == Vector2.RIGHT or direction == Vector2.ZERO:
 			shoot.scale.x *= -1

@@ -206,22 +206,22 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k3qt"]
 size = Vector2(32, 67)
 
-[node name="Raton_sprite" type="Node2D" unique_id=409222725]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1418287853]
+[node name="Raton_sprite" type="CharacterBody2D" unique_id=1418287853]
 script = ExtResource("1_xudk8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=703285920]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=703285920]
 position = Vector2(0, -53)
 sprite_frames = SubResource("SpriteFrames_lpn3q")
 animation = &"Bajar"
 autoplay = "Normal"
 frame_progress = 0.2152138
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1430320095]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1430320095]
 position = Vector2(-1, -38)
 shape = SubResource("RectangleShape2D_7k3qt")
 
-[node name="bala" type="Marker2D" parent="CharacterBody2D" unique_id=333812926]
+[node name="bala" type="Marker2D" parent="." unique_id=333812926]
 unique_name_in_owner = true
 position = Vector2(43, -36)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1988870960]

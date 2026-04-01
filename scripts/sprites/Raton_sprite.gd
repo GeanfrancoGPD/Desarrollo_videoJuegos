@@ -5,5 +5,5 @@ extends CharacterBody2D
 var movimiento = Movimiento.new()
 
 func _physics_process(delta: float) -> void:
-	velocity = movimiento.move_character(animate_sprite, delta, position_bala)
+	velocity = movimiento.move_character(animate_sprite, delta, position_bala, self)
 	move_and_slide()
