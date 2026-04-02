@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://c8anj2p1h7gm4"]
+
+[ext_resource type="Script" uid="uid://dsrjygrs38ojf" path="res://scripts/ui/barra_vida.gd" id="1_mr3ah"]
+
+[sub_resource type="Theme" id="Theme_mr3ah"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mr3ah"]
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="barra_vida" type="Control" unique_id=389706915]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mr3ah")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=274616397]
+layout_mode = 0
+offset_left = -172.0
+offset_top = -41.0
+offset_right = 180.0
+offset_bottom = -7.0
+theme = SubResource("Theme_mr3ah")
+theme_override_styles/background = SubResource("StyleBoxFlat_mr3ah")
