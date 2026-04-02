@@ -1,12 +1,11 @@
 extends Node
 
 class_name Movimiento
-var speed : float = 200
 var velocity : Vector2 = Vector2.ZERO
 var shooting_timer : float = 0
 const Balas = preload("res://scenes/armas/balas.tscn")
 
-func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bala: Marker2D, Player_nodo: Node) -> Vector2:
+func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bala: Marker2D, Player_nodo: Node, velocidad: float) -> Vector2:
 	var direction = Vector2.ZERO
 
 	# MOVIMIENTO
@@ -37,7 +36,7 @@ func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bal
 	# ANIMACIONES DE MOVIMIENTO
 	if direction != Vector2.ZERO:
 		direction = direction.normalized()
-		velocity = direction * speed
+		velocity = direction * velocidad
 		if direction.x != 0:
 			animate_sprite.play("Correr")
 			animate_sprite.flip_h = direction.x < 0
