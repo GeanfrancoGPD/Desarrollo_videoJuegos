@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://b0vc4vrnen86a"]
+
+[ext_resource type="Script" uid="uid://coctwechk6x1s" path="res://scripts/ui/Pause.gd" id="1_vb6pq"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1093253081]
+process_mode = 2
+script = ExtResource("1_vb6pq")
+
+[node name="Panel" type="Panel" parent="." unique_id=1098612081]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel" unique_id=662827517]
+layout_mode = 0
+offset_left = 358.0
+offset_top = 72.0
+offset_right = 763.0
+offset_bottom = 164.0
+theme_override_font_sizes/font_size = 54
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1247550414]
+layout_mode = 0
+offset_left = 408.0
+offset_top = 205.0
+offset_right = 734.0
+offset_bottom = 434.0
+theme_override_constants/separation = 30
+
+[node name="Continuar" type="Button" parent="Panel/VBoxContainer" unique_id=1486952063]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Continuar"
+
+[node name="Volver" type="Button" parent="Panel/VBoxContainer" unique_id=17454904]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Volver"
+
+[node name="opciones" type="Button" parent="Panel/VBoxContainer" unique_id=981253709]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Opciones"
+
+[node name="Salir" type="Button" parent="Panel/VBoxContainer" unique_id=1294996672]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Salir"
+
+[connection signal="pressed" from="Panel/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Volver" to="." method="_on_volver_pressed"]
