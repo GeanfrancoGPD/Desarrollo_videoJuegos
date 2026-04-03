@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://byvcukyk3p02h"]
 
 [ext_resource type="Texture2D" uid="uid://bpslketn5knct" path="res://assests/texture/Menu/Pantalla de inicio de Paint War.png" id="1_qpdvi"]
-[ext_resource type="Script" uid="uid://dlt8lsrrdj66s" path="res://scripts/MenuInicio.tscn.gd" id="1_wftd5"]
+[ext_resource type="Script" uid="uid://boln55gri4fsk" path="res://scripts/ui/menu_principal.gd" id="1_wftd5"]
 [ext_resource type="Texture2D" uid="uid://b6ofq40ke5qln" path="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview - copia (2).png" id="2_i5nob"]
 [ext_resource type="Texture2D" uid="uid://j2tbf465bb8" path="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview.png" id="3_wftd5"]
 [ext_resource type="Texture2D" uid="uid://ckhdorw2spklq" path="res://assests/texture/Menu/creditos.png" id="5_wftd5"]
