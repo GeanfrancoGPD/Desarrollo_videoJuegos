@@ -1,10 +1,41 @@
 [gd_scene format=3 uid="uid://b0vc4vrnen86a"]
 
-[ext_resource type="Script" uid="uid://coctwechk6x1s" path="res://scripts/ui/Pause.gd" id="1_vb6pq"]
+[sub_resource type="GDScript" id="GDScript_cup6r"]
+script/source = "extends CanvasLayer
+
+func _ready():
+	hide()
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+func _process(delta):
+	if Input.is_action_just_pressed(\"ui_cancel\"):
+		if get_tree().paused:
+			resume_game()
+		else:
+			pause_game()
+
+func pause_game():
+	get_tree().paused = true
+	show()
+
+func resume_game():
+	get_tree().paused = false
+	hide()
+
+func _on_continuar_pressed():
+	resume_game()
+
+func _on_volver_pressed():
+	get_tree().paused = false
+	get_tree().change_scene_to_file(\"res://scenes/ui/Menu_Principal.tscn\")
+
+func _on_salir_pressed() -> void:
+	get_tree().quit()
+"
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1093253081]
-process_mode = 2
-script = ExtResource("1_vb6pq")
+process_mode = 3
+script = SubResource("GDScript_cup6r")
 
 [node name="Panel" type="Panel" parent="." unique_id=1098612081]
 anchors_preset = 15
@@ -54,3 +85,4 @@ text = "Salir"
 
 [connection signal="pressed" from="Panel/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
