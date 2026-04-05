@@ -206,6 +206,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k3qt"]
 size = Vector2(32, 67)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fyt2c"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
 [node name="Raton_sprite" type="CharacterBody2D" unique_id=1418287853]
 script = ExtResource("1_xudk8")
 
@@ -223,4 +234,5 @@ shape = SubResource("RectangleShape2D_7k3qt")
 unique_name_in_owner = true
 position = Vector2(43, -36)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1988870960]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1392919925]
+replication_config = SubResource("SceneReplicationConfig_fyt2c")
