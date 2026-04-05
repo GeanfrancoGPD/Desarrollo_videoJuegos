@@ -6,7 +6,7 @@ extends Control
 
 
 func _ready():
-	actualizar(1,0)
+	actualizar(0,0)
 
 func actualizar(valor_1: int, valor_2:int):
 	p1.text = str(valor_1)

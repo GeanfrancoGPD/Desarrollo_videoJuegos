@@ -3,8 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bh188t687uykk" path="res://assests/sprites/Personajes/raton_sprites.png" id="1_0pn44"]
 [ext_resource type="Script" uid="uid://cugni7rmsfwph" path="res://scripts/sprites/Raton_sprite.gd" id="1_xudk8"]
 [ext_resource type="Texture2D" uid="uid://lyv3e1g3x10u" path="res://assests/sprites/raton_extras.png" id="2_uf3dl"]
-[ext_resource type="PackedScene" uid="uid://c8anj2p1h7gm4" path="res://scenes/ui/barra_vida.tscn" id="4_5mon6"]
-[ext_resource type="PackedScene" uid="uid://c70bdx283ex7r" path="res://scenes/ui/contador_partida.tscn" id="5_fyt2c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7k3qt"]
 atlas = ExtResource("2_uf3dl")
@@ -208,6 +206,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k3qt"]
 size = Vector2(32, 67)
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fyt2c"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+
 [node name="Raton_sprite" type="CharacterBody2D" unique_id=1418287853]
 script = ExtResource("1_xudk8")
 
@@ -226,16 +235,5 @@ shape = SubResource("RectangleShape2D_7k3qt")
 unique_name_in_owner = true
 position = Vector2(43, -36)
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1988870960]
-
-[node name="barra_vida" parent="." unique_id=389706915 instance=ExtResource("4_5mon6")]
-offset_left = -360.0
-offset_top = -241.0
-offset_right = -320.0
-offset_bottom = -201.0
-
-[node name="contador_partida" parent="." unique_id=1491076290 instance=ExtResource("5_fyt2c")]
-offset_left = 469.0
-offset_top = -299.0
-offset_right = 528.0
-offset_bottom = -222.0
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1392919925]
+replication_config = SubResource("SceneReplicationConfig_fyt2c")
