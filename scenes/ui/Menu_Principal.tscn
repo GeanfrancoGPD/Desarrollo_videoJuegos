@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://b6ofq40ke5qln" path="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview - copia (2).png" id="2_i5nob"]
 [ext_resource type="Texture2D" uid="uid://j2tbf465bb8" path="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview.png" id="3_wftd5"]
 [ext_resource type="Texture2D" uid="uid://ckhdorw2spklq" path="res://assests/texture/Menu/creditos.png" id="5_wftd5"]
+[ext_resource type="AudioStream" uid="uid://stbxvo2mhb41" path="res://assests/musica/juego/funky-diesel.mp3" id="6_i1c5w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bj1xx"]
 
@@ -88,6 +89,10 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 29
 icon = ExtResource("5_wftd5")
 flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1821060479]
+stream = ExtResource("6_i1c5w")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/ButtonJugar" to="." method="_on_button_jugar_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonSalir" to="." method="_on_button_salir_pressed"]
