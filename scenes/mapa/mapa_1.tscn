@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://407k6oo4cfe7" path="res://scenes/Objetos/Cauchos.tscn" id="6_17b38"]
 [ext_resource type="PackedScene" uid="uid://ctmt1tloedag5" path="res://scenes/Objetos/Sacos.tscn" id="7_5ipy4"]
 [ext_resource type="PackedScene" uid="uid://b0vc4vrnen86a" path="res://scenes/ui/PauseMenu.tscn" id="8_17b38"]
+[ext_resource type="AudioStream" uid="uid://cy47uwl6j6b3g" path="res://assests/musica/juego/mapa.mp3" id="9_5ipy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wfyh"]
 texture = ExtResource("1_cp1m2")
@@ -6407,3 +6408,7 @@ position = Vector2(-162, 267)
 position = Vector2(-354, 266)
 
 [node name="PauseMenu" parent="." unique_id=1093253081 instance=ExtResource("8_17b38")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=993549097]
+stream = ExtResource("9_5ipy4")
+autoplay = true
