@@ -3,9 +3,9 @@ extends Area2D
 @onready var bala: AnimatedSprite2D = $AnimatedSprite2D
 
 var velocidad_bala = 200
-var direccion = Vector2.RIGHT  # Se puede setear al instanciar
+var direccion = Vector2.RIGHT
 var life_time := 2.0
-
+var shooter: Node = null  # 👈 cambiado
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -19,5 +19,8 @@ func _process(delta):
 		queue_free()
 		
 func _on_body_entered(body):
+	if body == shooter:
+		return  # 👈 ignorar al que disparó
+	
 	print("Colisionó con:", body.name)
 	queue_free()

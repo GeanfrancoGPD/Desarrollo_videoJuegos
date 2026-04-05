@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dtcgfp7ws0wi2"]
+
+[ext_resource type="Script" uid="uid://b3r2msijvxd36" path="res://scripts/ventanas/split_scenes.gd" id="1_sk0hl"]
+
+[node name="split_scenes" type="Node" unique_id=1492665268]
+script = ExtResource("1_sk0hl")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1064390801]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=328845426]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer" unique_id=1066007875]
+layout_mode = 2
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
