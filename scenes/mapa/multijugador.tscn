@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://b1s0dak7047kv"]
+
+[ext_resource type="Script" uid="uid://8sukjxnfof8a" path="res://scripts/ventanas/multijugador.gd" id="1_dnvny"]
+[ext_resource type="PackedScene" uid="uid://c8anj2p1h7gm4" path="res://scenes/ui/barra_vida.tscn" id="2_qxfma"]
+[ext_resource type="PackedScene" uid="uid://c70bdx283ex7r" path="res://scenes/ui/contador_partida.tscn" id="3_r4orx"]
+
+[node name="multijugador" type="Node2D" unique_id=1426047188]
+script = ExtResource("1_dnvny")
+
+[node name="Menu" type="CenterContainer" parent="." unique_id=2133732223]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1148.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu" unique_id=512885726]
+layout_mode = 2
+alignment = 1
+
+[node name="host" type="Button" parent="Menu/VBoxContainer" unique_id=919110066]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Host"
+
+[node name="join" type="Button" parent="Menu/VBoxContainer" unique_id=1723593621]
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "Joint"
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=526179019]
+_spawnable_scenes = PackedStringArray("uid://dwpyk303w04m4", "uid://bobl5ng6n1bho")
+spawn_path = NodePath("..")
+
+[node name="world" type="Node2D" parent="." unique_id=670664947]
+
+[node name="ui" type="Node2D" parent="." unique_id=1823110040]
+
+[node name="Camera2D" type="Camera2D" parent="ui" unique_id=1950931555]
+position = Vector2(578, 323)
+
+[node name="barra_vida" parent="ui/Camera2D" unique_id=389706915 instance=ExtResource("2_qxfma")]
+offset_left = -373.0
+offset_top = -252.0
+offset_right = -333.0
+offset_bottom = -212.0
+
+[node name="contador_partida" parent="ui/Camera2D" unique_id=1491076290 instance=ExtResource("3_r4orx")]
+offset_left = 399.0
+offset_top = -307.0
+offset_right = 550.0
+offset_bottom = -229.0
+
+[connection signal="pressed" from="Menu/VBoxContainer/host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/join" to="." method="_on_join_pressed"]
