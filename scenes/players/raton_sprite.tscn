@@ -4,9 +4,6 @@
 [ext_resource type="Script" uid="uid://cugni7rmsfwph" path="res://scripts/sprites/Raton_sprite.gd" id="1_xudk8"]
 [ext_resource type="Texture2D" uid="uid://lyv3e1g3x10u" path="res://assests/sprites/raton_extras.png" id="2_uf3dl"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k3qt"]
-size = Vector2(32, 67)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_7k3qt"]
 atlas = ExtResource("2_uf3dl")
 region = Rect2(304, 0, 76, 102)
@@ -215,9 +212,8 @@ script = ExtResource("1_xudk8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=703285920]
 position = Vector2(0, -53)
 sprite_frames = SubResource("SpriteFrames_lpn3q")
-animation = &"Bajar"
+animation = &"Victoria"
 autoplay = "Normal"
-frame_progress = 0.2152138
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1430320095]
 position = Vector2(-1, -38)
