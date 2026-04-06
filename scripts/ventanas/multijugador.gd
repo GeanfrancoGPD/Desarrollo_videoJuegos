@@ -4,7 +4,10 @@ var peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
 @onready var center_container: CenterContainer = $Menu
 @onready var join_button: Button = $Menu/VBoxContainer/join
 
-var player_local:Node2D
+
+var spawn_points: Array[Marker2D] = []
+var player_local: Node2D
+var jugadores: Array =[]
 
 # Elementos UI
 @onready var world: Node2D = $world
@@ -50,8 +53,7 @@ func _on_join_pressed() -> void:
 	
 	# crear jugador local
 	spawn_player.rpc(multiplayer.get_unique_id())
-	
-	
+		
 
 func _on_peer_conneted(id: int = 1):
 	if id == multiplayer.get_unique_id():
@@ -73,6 +75,8 @@ func spawn_player(id):
 	var player_instance = player_scene.instantiate()
 	
 	player_instance.name = str(id)
+	player_instance.muerto.connect(player_muerto)
+	jugadores.append(id)
 	world.add_child(player_instance, true)
 	
 	player_instance.set_multiplayer_authority(id)
@@ -81,3 +85,41 @@ func spawn_player(id):
 	if id == multiplayer.get_unique_id():
 		camera_2d.make_current()
 		player_local = player_instance
+		
+		
+@rpc("any_peer","call_local")
+func spawn_bala(pos: Vector2, dir: Vector2, shooter_id: int):
+	var bala_scene = load("res://scenes/armas/balas.tscn")
+	var bala = bala_scene.instantiate()
+	
+	world.add_child(bala)
+	
+	bala.global_position = pos
+	bala.direccion = dir
+	
+	# asignar shooter correctamente
+	if world.has_node(str(shooter_id)):
+		bala.shooter = world.get_node(str(shooter_id))
+		
+		
+func player_muerto(id:int):
+	if !multiplayer.is_server():
+		return
+		
+	jugadores.erase(id)
+	
+	if jugadores.size() == 1:
+		var ganador = jugadores[0]
+		game_over(ganador)
+	
+	
+@rpc("any_peer", "call_local")
+func game_over(ganador):
+	print("GANADOR:", ganador)
+	
+#func get_spawn_position(player_id: int) -> Vector2:
+	#if spawn_points.size() == 0:
+		#return Vector2.ZERO
+	## por ejemplo, asigna spawn según el ID modulo la cantidad de spawn points
+	#var index = player_id % spawn_points.size()
+	#return spawn_points[index].global_position

@@ -22,5 +22,8 @@ func _on_body_entered(body):
 	if body == shooter:
 		return  # 👈 ignorar al que disparó
 	
+	if body.has_method("recibir_dano"):
+		body.recibir_dano(10)
+		
 	print("Colisionó con:", body.name)
 	queue_free()

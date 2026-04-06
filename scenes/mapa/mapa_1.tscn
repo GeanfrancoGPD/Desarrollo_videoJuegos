@@ -6401,3 +6401,9 @@ position = Vector2(-162, 267)
 
 [node name="StaticBodySacos4" parent="Objetos" unique_id=344212521 instance=ExtResource("7_5ipy4")]
 position = Vector2(-354, 266)
+
+[node name="Spawn_1" type="Marker2D" parent="." unique_id=1749294502]
+position = Vector2(-473, -283)
+
+[node name="Spawn_2" type="Marker2D" parent="." unique_id=2099272659]
+position = Vector2(1247, 1073)
