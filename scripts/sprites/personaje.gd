@@ -3,6 +3,7 @@ class_name Personaje
 
 @export var vida: float = 100.0
 @export var velocidad: float = 200
+signal muerto(id)
 
 func recibir_dano(cantidad: float):
 	vida -= cantidad
@@ -12,4 +13,5 @@ func recibir_dano(cantidad: float):
 		morir()
 
 func morir():
+	muerto.emit(multiplayer.get_unique_id())
 	queue_free()

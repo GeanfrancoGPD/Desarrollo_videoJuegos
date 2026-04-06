@@ -15,7 +15,8 @@ func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bal
 	if Input.is_action_pressed("up"): direction.y -= 1
 
 	if Input.is_action_just_pressed("disparo"):
-		Disparar(Player_nodo, animate_sprite, delta)
+		var main = Player_nodo.get_tree().current_scene
+		Disparar(Player_nodo, animate_sprite, delta, main)
 		
 	# TIMER DISPARO
 	if shooting_timer > 0:
@@ -50,21 +51,17 @@ func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bal
 	
 	return velocity
 
-func Disparar(Player_nodo: Node, animate_sprite: AnimatedSprite2D, delta:float):
+func Disparar(Player_nodo: Node, animate_sprite: AnimatedSprite2D, delta:float, main_node: Node):
 	shooting_timer = 0.2
 	velocity = Vector2.ZERO
 	
 
-	var shoot = Balas.instantiate()
-	Player_nodo.get_tree().current_scene.add_child(shoot)
-
 	# 🎯 Dirección real 360°
 	
 	var direccion = (Player_nodo.get_global_mouse_position() - Player_nodo.global_position).normalized()
-	shoot.shooter = Player_nodo
-	shoot.direccion = direccion
-
-	# Spawn delante del player
-	var offset = direccion * 20
-	shoot.global_position = Player_nodo.global_position + offset
-	
+		
+	main_node.spawn_bala.rpc(
+		Player_nodo.global_position + direccion * 20,
+		direccion,
+		Player_nodo.get_multiplayer_authority()
+	)
