@@ -8,18 +8,21 @@ var peer: ENetMultiplayerPeer = ENetMultiplayerPeer.new()
 var spawn_points: Array[Marker2D] = []
 var player_local: Node2D
 var jugadores: Array =[]
+var invulnerable:bool
 
 # Elementos UI
 @onready var world: Node2D = $world
 @onready var camera_2d: Camera2D = $ui/Camera2D
 @onready var barra_vida: Control = $ui/Camera2D/barra_vida
 
+@onready var ui: Node2D = $ui
 
 # Called when the node enters the scene tree for the first time.
 #func _ready() -> void:
 	#join_button.pressed.connect(_on_join_pressed)
 	#pass
-	
+func _ready() -> void:
+	ui.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -38,6 +41,7 @@ func _on_host_pressed() -> void:
 	
 	_on_peer_conneted()
 	center_container.hide()
+	ui.show()
 
 func _on_join_pressed() -> void:
 	peer.create_client("localhost", 3015)
@@ -53,7 +57,7 @@ func _on_join_pressed() -> void:
 	
 	# crear jugador local
 	spawn_player.rpc(multiplayer.get_unique_id())
-		
+	ui.show()	
 
 func _on_peer_conneted(id: int = 1):
 	if id == multiplayer.get_unique_id():
@@ -116,6 +120,25 @@ func player_muerto(id:int):
 @rpc("any_peer", "call_local")
 func game_over(ganador):
 	print("GANADOR:", ganador)
+	
+@rpc("any_peer", "call_local")
+func efecto_dano(id:int):
+	if !world.has_node(str(id)):
+		return
+		
+	var player = world.get_node(str(id))
+	invulnerable = true
+	
+	if player == null:
+		return
+	
+	for i in range(6):
+		player.modulate.a = 0.3
+		await get_tree().create_timer(0.1).timeout
+		player.modulate.a = 1.0
+		await get_tree().create_timer(0.1).timeout
+	
+	invulnerable = false
 	
 #func get_spawn_position(player_id: int) -> Vector2:
 	#if spawn_points.size() == 0:
