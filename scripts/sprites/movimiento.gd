@@ -56,7 +56,7 @@ func Disparar(Player_nodo: Node, animate_sprite: AnimatedSprite2D, delta:float, 
 	velocity = Vector2.ZERO
 	
 
-	# 🎯 Dirección real 360°
+	# Dirección real 360°
 	
 	var direccion = (Player_nodo.get_global_mouse_position() - Player_nodo.global_position).normalized()
 		

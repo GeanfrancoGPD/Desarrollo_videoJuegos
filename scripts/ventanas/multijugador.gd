@@ -31,7 +31,7 @@ func _process(_delta):
 		barra_vida.actualizar(player_local.vida, player_local.vida_maxima)
 
 func _on_host_pressed() -> void:
-	peer.create_server(3015, 2)
+	peer.create_server(3015, 5)
 	multiplayer.multiplayer_peer = peer
 	multiplayer.peer_connected.connect(_on_peer_conneted)
 	
@@ -121,24 +121,6 @@ func player_muerto(id:int):
 func game_over(ganador):
 	print("GANADOR:", ganador)
 	
-@rpc("any_peer", "call_local")
-func efecto_dano(id:int):
-	if !world.has_node(str(id)):
-		return
-		
-	var player = world.get_node(str(id))
-	invulnerable = true
-	
-	if player == null:
-		return
-	
-	for i in range(6):
-		player.modulate.a = 0.3
-		await get_tree().create_timer(0.1).timeout
-		player.modulate.a = 1.0
-		await get_tree().create_timer(0.1).timeout
-	
-	invulnerable = false
 	
 #func get_spawn_position(player_id: int) -> Vector2:
 	#if spawn_points.size() == 0:

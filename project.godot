@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 
 version_control/autoload_on_startup=true
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/ridiculous_coding/plugin.cfg")
+
 [input]
 
 right={

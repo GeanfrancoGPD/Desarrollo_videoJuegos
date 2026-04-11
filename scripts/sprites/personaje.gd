@@ -11,7 +11,7 @@ func recibir_dano(cantidad: float):
 	vida -= cantidad
 	print("Vida restante:", vida)
 	
-	recibir_dano.rpc(player_id)
+	efecto_dano()
 	
 	if vida <= 0:
 		morir()
@@ -19,4 +19,8 @@ func recibir_dano(cantidad: float):
 func morir():
 	muerto.emit(multiplayer.get_unique_id())
 	queue_free()
+	
+func efecto_dano():
+	
+	pass
 	

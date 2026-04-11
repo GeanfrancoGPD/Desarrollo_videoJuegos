@@ -219,6 +219,9 @@ properties/2/replication_mode = 1
 
 [node name="Raton_sprite" type="CharacterBody2D" unique_id=1418287853]
 script = ExtResource("1_xudk8")
+vida = null
+velocidad = null
+player_id = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=703285920]
 position = Vector2(0, -53)
