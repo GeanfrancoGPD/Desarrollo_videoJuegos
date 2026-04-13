@@ -12,7 +12,7 @@ func _enter_tree() -> void:
 func _ready():
 	add_to_group("player")
 	var ip = IP.get_local_addresses()
-	print(ip[6])
+	# print(ip[6])
 	
 
 func _physics_process(delta: float) -> void:

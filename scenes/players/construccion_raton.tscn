@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bbi4vk0mv57yi"]
+
+[ext_resource type="Texture2D" uid="uid://dtx8g8ou775ds" path="res://assests/texture/construir/Construir_Raton.png" id="1_amah2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxtrn"]
+atlas = ExtResource("1_amah2")
+region = Rect2(133, 0, 133, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xem2p"]
+atlas = ExtResource("1_amah2")
+region = Rect2(266, 0, 133, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8plhu"]
+atlas = ExtResource("1_amah2")
+region = Rect2(399, 0, 133, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duacv"]
+atlas = ExtResource("1_amah2")
+region = Rect2(532, 0, 133, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4irv"]
+atlas = ExtResource("1_amah2")
+region = Rect2(0, 187, 133, 187)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kxgw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxtrn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xem2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8plhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duacv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4irv")
+}],
+"loop": true,
+"name": &"Raton",
+"speed": 5.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=33112518]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7kxgw")
+animation = &"Raton"
+frame = 2
+frame_progress = 0.464149

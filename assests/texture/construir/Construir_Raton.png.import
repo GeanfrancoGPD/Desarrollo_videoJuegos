@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j2tbf465bb8"
-path="res://.godot/imported/25_mar_2026__12_34_40-removebg-preview.png-6f428bbac2b3538fc14366bcd428a361.ctex"
+uid="uid://dtx8g8ou775ds"
+path="res://.godot/imported/Construir_Raton.png-5b4176c95ef05922de885fac46a4b6b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview.png"
-dest_files=["res://.godot/imported/25_mar_2026__12_34_40-removebg-preview.png-6f428bbac2b3538fc14366bcd428a361.ctex"]
+source_file="res://assests/texture/construir/Construir_Raton.png"
+dest_files=["res://.godot/imported/Construir_Raton.png-5b4176c95ef05922de885fac46a4b6b7.ctex"]
 
 [params]
 

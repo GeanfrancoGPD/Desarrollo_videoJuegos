@@ -56,8 +56,7 @@ shape = SubResource("CircleShape2D_ey8c2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=693737325]
 position = Vector2(21, -22)
-scale = Vector2(0.41842845, 0.38449365)
+scale = Vector2(-0.412, -0.378)
 sprite_frames = SubResource("SpriteFrames_kwbaq")
-animation = &"bala_azul"
+animation = &"bala_roja"
 autoplay = "bala_azul"
-frame_progress = 0.8321735
