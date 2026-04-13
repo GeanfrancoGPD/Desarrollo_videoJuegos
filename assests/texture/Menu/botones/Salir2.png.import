@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhac1b5fl6pux"
-path="res://.godot/imported/25_mar_2026__12_34_40-removebg-preview - copia.png-9bdbd59ddd5ffcb99ad13d0cfdf7a5bd.ctex"
+uid="uid://bfkdvo0wupfym"
+path="res://.godot/imported/Salir2.png-a3eee08ff47263a75aa4ed653680ae7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview - copia.png"
-dest_files=["res://.godot/imported/25_mar_2026__12_34_40-removebg-preview - copia.png-9bdbd59ddd5ffcb99ad13d0cfdf7a5bd.ctex"]
+source_file="res://assests/texture/Menu/botones/Salir2.png"
+dest_files=["res://.godot/imported/Salir2.png-a3eee08ff47263a75aa4ed653680ae7a.ctex"]
 
 [params]
 
