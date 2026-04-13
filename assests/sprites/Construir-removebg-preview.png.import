@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://j2tbf465bb8"
-path="res://.godot/imported/25_mar_2026__12_34_40-removebg-preview.png-6f428bbac2b3538fc14366bcd428a361.ctex"
+uid="uid://cmefoplbk5ven"
+path="res://.godot/imported/Construir-removebg-preview.png-7d7340debd36cf5cf02a3dc8865c855b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview.png"
-dest_files=["res://.godot/imported/25_mar_2026__12_34_40-removebg-preview.png-6f428bbac2b3538fc14366bcd428a361.ctex"]
+source_file="res://assests/sprites/Construir-removebg-preview.png"
+dest_files=["res://.godot/imported/Construir-removebg-preview.png-7d7340debd36cf5cf02a3dc8865c855b.ctex"]
 
 [params]
 
