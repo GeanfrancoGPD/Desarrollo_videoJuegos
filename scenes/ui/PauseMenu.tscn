@@ -1,29 +1,41 @@
 [gd_scene format=3 uid="uid://b0vc4vrnen86a"]
 
+[ext_resource type="Texture2D" uid="uid://dp1024orcxcgc" path="res://assests/texture/Menu/botones/continuar.png" id="1_5twic"]
+[ext_resource type="Texture2D" uid="uid://0dvnybvwqrvj" path="res://assests/texture/Menu/botones/Volver2.png" id="2_v5pi0"]
+[ext_resource type="Texture2D" uid="uid://c7grts2k0und3" path="res://assests/texture/Menu/botones/Opciones.png" id="3_cctyv"]
+[ext_resource type="Texture2D" uid="uid://bfkdvo0wupfym" path="res://assests/texture/Menu/botones/Salir2.png" id="4_csaq8"]
+
 [sub_resource type="GDScript" id="GDScript_cup6r"]
 script/source = "extends CanvasLayer
 
 func _ready():
 	hide()
-	process_mode = Node.PROCESS_MODE_ALWAYS
+	process_mode = Node.PROCESS_MODE_ALWAYS 
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed(\"ui_cancel\"):
-		if get_tree().paused:
-			resume_game()
+		var target_state = !get_tree().paused
+		if multiplayer.is_server():
+			sync_pause.rpc(target_state)
 		else:
-			pause_game()
+			request_pause_change.rpc_id(1, target_state)
 
-func pause_game():
-	get_tree().paused = true
-	show()
+@rpc(\"any_peer\", \"call_remote\", \"reliable\")
+func request_pause_change(state: bool):
+	if multiplayer.is_server():
+		sync_pause.rpc(state)
 
-func resume_game():
-	get_tree().paused = false
-	hide()
+@rpc(\"authority\", \"call_local\", \"reliable\")
+func sync_pause(state: bool):
+	get_tree().paused = state
+	visible = state
 
 func _on_continuar_pressed():
-	resume_game()
+	var target_state = false
+	if multiplayer.is_server():
+		sync_pause.rpc(target_state)
+	else:
+		request_pause_change.rpc_id(1, target_state)
 
 func _on_volver_pressed():
 	get_tree().paused = false
@@ -52,36 +64,40 @@ offset_top = 72.0
 offset_right = 763.0
 offset_bottom = 164.0
 theme_override_font_sizes/font_size = 54
-text = "Pause"
+text = "Pausa"
 horizontal_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1247550414]
 layout_mode = 0
-offset_left = 408.0
-offset_top = 205.0
-offset_right = 734.0
-offset_bottom = 434.0
-theme_override_constants/separation = 30
+offset_left = 430.0
+offset_top = 182.0
+offset_right = 756.0
+offset_bottom = 652.0
+theme_override_constants/separation = -5
 
 [node name="Continuar" type="Button" parent="Panel/VBoxContainer" unique_id=1486952063]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Continuar"
+icon = ExtResource("1_5twic")
+flat = true
 
 [node name="Volver" type="Button" parent="Panel/VBoxContainer" unique_id=17454904]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Volver"
+icon = ExtResource("2_v5pi0")
+flat = true
 
 [node name="opciones" type="Button" parent="Panel/VBoxContainer" unique_id=981253709]
 layout_mode = 2
 theme_override_font_sizes/font_size = 27
-text = "Opciones"
+icon = ExtResource("3_cctyv")
+flat = true
 
 [node name="Salir" type="Button" parent="Panel/VBoxContainer" unique_id=1294996672]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
-text = "Salir"
+icon = ExtResource("4_csaq8")
+flat = true
 
 [connection signal="pressed" from="Panel/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Volver" to="." method="_on_volver_pressed"]

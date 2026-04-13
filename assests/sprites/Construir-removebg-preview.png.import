@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coercynxkpcgv"
-path="res://.godot/imported/volver.png-f5b840b3be8534f690d5a70c78ecb891.ctex"
+uid="uid://cmefoplbk5ven"
+path="res://.godot/imported/Construir-removebg-preview.png-7d7340debd36cf5cf02a3dc8865c855b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assests/texture/Menu/volver.png"
-dest_files=["res://.godot/imported/volver.png-f5b840b3be8534f690d5a70c78ecb891.ctex"]
+source_file="res://assests/sprites/Construir-removebg-preview.png"
+dest_files=["res://.godot/imported/Construir-removebg-preview.png-7d7340debd36cf5cf02a3dc8865c855b.ctex"]
 
 [params]
 

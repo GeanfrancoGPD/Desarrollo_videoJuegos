@@ -10,6 +10,11 @@ var shooter: Node = null  # 👈 cambiado
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	bala.play("bala_azul")
+	var mouse_position := get_local_mouse_position()
+	var sprite := $AnimatedSprite2D
+	sprite.look_at(mouse_position)
+	if mouse_position.x > 0:
+		sprite.scale.y *= -1
 
 func _process(delta):
 	life_time -= delta
