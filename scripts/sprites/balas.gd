@@ -5,16 +5,16 @@ extends Area2D
 var velocidad_bala = 200
 var direccion = Vector2.RIGHT
 var life_time := 2.0
-var shooter: Node = null  # 👈 cambiado
+var shooter: Node = null  # cambiado
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	bala.play("bala_azul")
 	var mouse_position := get_local_mouse_position()
-	var sprite := $AnimatedSprite2D
-	sprite.look_at(mouse_position)
+
+	bala.look_at(mouse_position)
 	if mouse_position.x > 0:
-		sprite.scale.y *= -1
+		bala.scale.y *= -1
 
 func _process(delta):
 	life_time -= delta
@@ -25,7 +25,7 @@ func _process(delta):
 		
 func _on_body_entered(body):
 	if body == shooter:
-		return  # 👈 ignorar al que disparó
+		return  # ignorar al que disparó
 	
 	if body.has_method("recibir_dano"):
 		body.recibir_dano(10)
