@@ -3,7 +3,6 @@ extends Personaje
 @onready var animate_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var position_bala: Marker2D = $bala  # Aquí sí funciona
 
-
 var movimiento = Movimiento.new()
 var vida_maxima = vida
 
@@ -24,3 +23,9 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
+func efecto_dano():	
+	for i in range(6):
+		animate_sprite.modulate.a = 0.3
+		await get_tree().create_timer(0.1).timeout
+		animate_sprite.modulate.a = 1.0
+		await get_tree().create_timer(0.1).timeout

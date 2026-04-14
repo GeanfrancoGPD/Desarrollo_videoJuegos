@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://b3tqqltg4hdlk"]
+
+[ext_resource type="Texture2D" uid="uid://ckxqetq4jrmqr" path="res://assests/texture/Menu/fondo creditos.png" id="1_am2vt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_am2vt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_itxae"]
+
+[sub_resource type="Theme" id="Theme_am2vt"]
+
+[node name="Control" type="Control" unique_id=1508975026]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=127263887]
+layout_mode = 0
+texture = ExtResource("1_am2vt")
+
+[node name="Node" type="ColorRect" parent="." unique_id=445204849]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -3.0
+offset_bottom = 123.0
+grow_horizontal = 2
+color = Color(0.0142752165, 0.014275218, 0.014275218, 1)
+
+[node name="Label" type="Label" parent="Node" unique_id=446000198]
+layout_mode = 0
+offset_left = 695.0
+offset_top = 166.0
+offset_right = 866.0
+offset_bottom = 239.0
+theme_override_colors/font_color = Color(0.9002413, 0.9245506, 1.540184e-06, 1)
+theme_override_colors/font_shadow_color = Color(0.31764707, 0, 0.6313726, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxTexture_am2vt")
+text = "HOST IP ADDRESS
+192.168.0.1"
+
+[node name="Label2" type="Label" parent="Node" unique_id=1533022724]
+layout_mode = 0
+offset_left = 75.0
+offset_top = -1.0
+offset_right = 452.0
+offset_bottom = 124.0
+theme_override_colors/font_shadow_color = Color(0.95445794, 3.6098063e-06, 1.347661e-06, 1)
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_itxae")
+text = "HOSTING SESSION"
+
+[node name="ColorRect" type="ColorRect" parent="Node" unique_id=1517029034]
+layout_mode = 0
+offset_left = 934.0
+offset_top = 29.0
+offset_right = 1110.0
+offset_bottom = 113.0
+theme = SubResource("Theme_am2vt")
+color = Color(0, 1, 0, 1)
