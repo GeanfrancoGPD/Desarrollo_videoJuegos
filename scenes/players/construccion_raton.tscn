@@ -1,6 +1,28 @@
 [gd_scene format=3 uid="uid://bbi4vk0mv57yi"]
 
 [ext_resource type="Texture2D" uid="uid://dtx8g8ou775ds" path="res://assests/texture/construir/Construir_Raton.png" id="1_amah2"]
+[ext_resource type="Texture2D" uid="uid://dlu7d7dmysso3" path="res://assests/texture/construir/Construir_Paloma.png" id="1_xem2p"]
+[ext_resource type="AudioStream" uid="uid://b3ivvpod2i0og" path="res://assests/musica/SFX/construir.mp3" id="3_8plhu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7kxgw"]
+atlas = ExtResource("1_xem2p")
+region = Rect2(133, 0, 133, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkbjp"]
+atlas = ExtResource("1_xem2p")
+region = Rect2(266, 0, 133, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6xld"]
+atlas = ExtResource("1_xem2p")
+region = Rect2(399, 0, 133, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bgmif"]
+atlas = ExtResource("1_xem2p")
+region = Rect2(532, 0, 133, 187)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bswcn"]
+atlas = ExtResource("1_xem2p")
+region = Rect2(0, 187, 133, 187)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pxtrn"]
 atlas = ExtResource("1_amah2")
@@ -26,6 +48,26 @@ region = Rect2(0, 187, 133, 187)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_7kxgw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkbjp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6xld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bgmif")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bswcn")
+}],
+"loop": true,
+"name": &"Paloma",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pxtrn")
 }, {
 "duration": 1.0,
@@ -48,6 +90,9 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=33112518]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7kxgw")
-animation = &"Raton"
-frame = 2
-frame_progress = 0.464149
+animation = &"Paloma"
+frame_progress = 0.5541664
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=592336969]
+stream = ExtResource("3_8plhu")
+autoplay = true

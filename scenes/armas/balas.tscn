@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cv5yc7x7beigc" path="res://assests/texture/Balas.png" id="1_44lbl"]
 [ext_resource type="Script" uid="uid://k10tjljpyygf" path="res://scripts/sprites/balas.gd" id="1_ey8c2"]
+[ext_resource type="AudioStream" uid="uid://bvfcmnpt6kmol" path="res://assests/musica/SFX/Disparo.mp3" id="3_fpaym"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ey8c2"]
 radius = 17.029387
@@ -60,3 +61,7 @@ scale = Vector2(-0.412, -0.378)
 sprite_frames = SubResource("SpriteFrames_kwbaq")
 animation = &"bala_roja"
 autoplay = "bala_azul"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1435134483]
+stream = ExtResource("3_fpaym")
+autoplay = true
