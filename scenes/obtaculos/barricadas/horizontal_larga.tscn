@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cw8v4onkoigve"]
+
+[ext_resource type="Texture2D" uid="uid://bo2r7rcimx6go" path="res://assests/texture/construir/Obtaculos/metal/metal 1.png" id="1_ip5rt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gxuq2"]
+size = Vector2(388, 49)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=425821782]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1546734555]
+texture = ExtResource("1_ip5rt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=228430148]
+position = Vector2(-1, 14.5)
+shape = SubResource("RectangleShape2D_gxuq2")

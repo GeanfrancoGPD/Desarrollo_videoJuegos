@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://csjq0adwghqsc" path="res://scripts/ventanas/Creditosl.gd" id="1_2usq2"]
 [ext_resource type="Texture2D" uid="uid://ckxqetq4jrmqr" path="res://assests/texture/Menu/fondo creditos.png" id="2_5hw77"]
-[ext_resource type="Texture2D" uid="uid://coercynxkpcgv" path="res://assests/texture/Menu/botones/volver.png" id="3_a7655"]
+[ext_resource type="Texture2D" uid="uid://bx3v1ab0ttviy" path="res://assests/texture/Menu/botones/volver.png" id="3_a7655"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_hc32g"]
 font_size = 18
@@ -86,10 +86,10 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="." unique_id=631936824]
 layout_mode = 0
-offset_left = 460.0
-offset_top = 514.0
-offset_right = 718.0
-offset_bottom = 618.0
+offset_left = 466.0
+offset_top = 505.0
+offset_right = 724.0
+offset_bottom = 609.0
 theme_override_font_sizes/font_size = 31
 icon = ExtResource("3_a7655")
 flat = true
