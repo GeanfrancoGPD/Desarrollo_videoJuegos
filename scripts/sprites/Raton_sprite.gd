@@ -11,8 +11,8 @@ func _enter_tree() -> void:
 
 func _ready():
 	add_to_group("player")
-	var ip = IP.get_local_addresses()
-	# print(ip[6])
+	#var ip = IP.get_local_addresses()
+	## print(ip[6])
 	
 
 func _physics_process(delta: float) -> void:
@@ -29,3 +29,7 @@ func efecto_dano():
 		await get_tree().create_timer(0.1).timeout
 		animate_sprite.modulate.a = 1.0
 		await get_tree().create_timer(0.1).timeout
+		
+func extend_data(data: Dictionary) -> void:
+	data["animacion"] = animate_sprite.animation
+	data["flip_h"] = animate_sprite.flip_h

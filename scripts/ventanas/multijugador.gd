@@ -109,12 +109,39 @@ func spawn_bala(pos: Vector2, dir: Vector2, shooter_id: int):
 func player_muerto(id:int):
 	if !multiplayer.is_server():
 		return
-		
-	jugadores.erase(id)
 	
+	var player_muerto_node = world.get_node(str(id))
+	var data_muerto = player_muerto_node.get_data()
+	
+	jugadores.erase(id)
+	print("murio:", id)
 	if jugadores.size() == 1:
-		var ganador = jugadores[0]
-		game_over(ganador)
+		var ganador_id = jugadores[0]
+		var player_ganador = world.get_node(str(ganador_id))
+		var data_ganador = player_ganador.get_data()
+		 # Primero enviamos derrota al muerto, victoria al ganador
+		terminar_partida.rpc_id(id, false, data_muerto)
+		terminar_partida.rpc_id(ganador_id, true, data_ganador)
+	else:
+		# Quedan más jugadores, solo avisamos al muerto
+		terminar_partida.rpc_id(id, false, data_muerto)
+	
+
+@rpc("call_local")
+func terminar_partida(es_ganador: bool, data):
+	print("Es ganador %s y data %s" % [es_ganador, data])
+	# cambiar escena
+	var escena
+	if es_ganador == true: 
+		escena = load("uid://dw4scvr5vno00").instantiate()
+	else :
+		escena = load("uid://hd5whowbygaf").instantiate()
+			
+	escena.player_data = data
+	escena.es_ganador = es_ganador
+	
+	get_tree().current_scene.queue_free()
+	get_tree().root.add_child(escena)
 	
 	
 @rpc("any_peer", "call_local")
