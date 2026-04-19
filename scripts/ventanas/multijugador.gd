@@ -36,7 +36,7 @@ func _on_host_pressed() -> void:
 	multiplayer.peer_connected.connect(_on_peer_conneted)
 	
 	#cargar mapa 
-	var leven = load("res://scenes/mapa/mapa_1.tscn").instantiate()
+	var leven = load("res://scenes/mapa/mapa_1.scn").instantiate()
 	world.add_child(leven, true)
 	
 	_on_peer_conneted()
@@ -52,7 +52,7 @@ func _on_join_pressed() -> void:
 	await multiplayer.connected_to_server
 	
 	# cargar mapa también en cliente
-	var leven = load("res://scenes/mapa/mapa_1.tscn").instantiate()
+	var leven = load("res://scenes/mapa/mapa_1.scn").instantiate()
 	world.add_child(leven, true)
 	
 	# crear jugador local
