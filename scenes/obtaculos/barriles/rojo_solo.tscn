@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dbf5gn4nlk58i"]
+
+[ext_resource type="Texture2D" uid="uid://botp2otm0t4ph" path="res://assests/texture/Mapa/Obtaculos/barriles/barril  rojo solo.png" id="1_rmteb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3alrb"]
+size = Vector2(74, 52)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1127183321]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=577188201]
+texture = ExtResource("1_rmteb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1206350146]
+position = Vector2(0, 24)
+shape = SubResource("RectangleShape2D_3alrb")

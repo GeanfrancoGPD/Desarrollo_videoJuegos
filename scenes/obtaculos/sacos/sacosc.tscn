@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://bhtynq31kq0e4" path="res://assests/texture/Mapa/Obtaculos/sacos/c.png" id="1_yxlt0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hl5jp"]
-size = Vector2(58, 142)
+size = Vector2(58, 122)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tmcgi"]
-size = Vector2(247, 50)
+size = Vector2(247, 38)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2wxts"]
-size = Vector2(68, 127)
+size = Vector2(68, 104)
 
 [node name="StaticBody2D" type="StaticBody2D" unique_id=230729233]
 
@@ -17,13 +17,13 @@ size = Vector2(68, 127)
 texture = ExtResource("1_yxlt0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=423175885]
-position = Vector2(-153, 9)
+position = Vector2(-153, 19)
 shape = SubResource("RectangleShape2D_hl5jp")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1826843855]
-position = Vector2(2.5, -33)
+position = Vector2(2.5, -27)
 shape = SubResource("RectangleShape2D_tmcgi")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=2009363171]
-position = Vector2(157, 6.5)
+position = Vector2(157, 18)
 shape = SubResource("RectangleShape2D_2wxts")

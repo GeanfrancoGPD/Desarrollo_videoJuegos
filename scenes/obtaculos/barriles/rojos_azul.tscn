@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bbup0o7tyvgu6"]
+
+[ext_resource type="Texture2D" uid="uid://b7kpdhlf8tpr0" path="res://assests/texture/Mapa/Obtaculos/barriles/dos rojos un azul.png" id="1_qmrbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8oyg"]
+size = Vector2(211, 62)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=134686514]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1823434267]
+texture = ExtResource("1_qmrbg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1468101816]
+position = Vector2(4.5, 21)
+shape = SubResource("RectangleShape2D_x8oyg")

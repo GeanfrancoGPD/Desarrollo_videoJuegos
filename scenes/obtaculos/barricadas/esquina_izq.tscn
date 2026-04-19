@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://p5ivi07tbg5x"]
+
+[ext_resource type="Texture2D" uid="uid://d038li1kec2l5" path="res://assests/texture/Mapa/Obtaculos/metal/metal a la izq.png" id="1_n4aks"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d38t5"]
+size = Vector2(255, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ymgb"]
+size = Vector2(45, 127.5)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1827159174]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1654021242]
+texture = ExtResource("1_n4aks")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1318644391]
+position = Vector2(-4.5, 54)
+shape = SubResource("RectangleShape2D_d38t5")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=768951406]
+position = Vector2(101.5, -28.25)
+shape = SubResource("RectangleShape2D_1ymgb")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://56gg1hls6we"]
+
+[ext_resource type="Texture2D" uid="uid://dhdcg5jiei536" path="res://assests/texture/Mapa/Obtaculos/barriles/dos barriles.png" id="1_r34hh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pn8h"]
+size = Vector2(138, 63)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1046833387]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1899362211]
+texture = ExtResource("1_r34hh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=438304709]
+position = Vector2(8, 27.5)
+shape = SubResource("RectangleShape2D_0pn8h")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cjfeeuvxmgrcd"]
+
+[ext_resource type="Texture2D" uid="uid://cnsdwhsn50kms" path="res://assests/texture/Mapa/Obtaculos/cauchos/cauchos 5.png" id="1_hncto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_88nla"]
+size = Vector2(324, 43)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1131561132]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=952045028]
+texture = ExtResource("1_hncto")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=578607357]
+position = Vector2(8, 21.5)
+shape = SubResource("RectangleShape2D_88nla")

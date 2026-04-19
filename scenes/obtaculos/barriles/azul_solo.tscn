@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://chtm2lu8kklsd"]
+
+[ext_resource type="Texture2D" uid="uid://bwiop1vahjfdu" path="res://assests/texture/Mapa/Obtaculos/barriles/barrile azul solo.png" id="1_so87e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddyae"]
+size = Vector2(68, 51)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1540153091]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=806046564]
+texture = ExtResource("1_so87e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1159893842]
+position = Vector2(-1, 22.5)
+shape = SubResource("RectangleShape2D_ddyae")
