@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dw4scvr5vno00"]
 
 [ext_resource type="FontFile" uid="uid://ovv7qstjsedd" path="res://assests/font/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="1_fmy0c"]
+[ext_resource type="Script" uid="uid://c6j26fm50aab1" path="res://scripts/ui/victoria.gd" id="1_jjw86"]
 [ext_resource type="Texture2D" uid="uid://d04nxoa1nuu27" path="res://assests/texture/ui/corona.png" id="2_4vahd"]
 [ext_resource type="Texture2D" uid="uid://b1i0x802as8n4" path="res://assests/texture/ui/trofeo.png" id="3_h8bcv"]
 [ext_resource type="Texture2D" uid="uid://0hhsirqwpanm" path="res://assests/texture/ui/destello.png" id="4_jjw86"]
@@ -19,6 +20,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jjw86")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1843220278]
 layout_mode = 1

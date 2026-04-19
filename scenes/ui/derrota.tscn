@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://hd5whowbygaf"]
 
+[ext_resource type="Script" uid="uid://dg1wmguu5ag6u" path="res://scripts/ui/derrota.gd" id="1_2yglj"]
 [ext_resource type="FontFile" uid="uid://ovv7qstjsedd" path="res://assests/font/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="1_n1eig"]
 [ext_resource type="Texture2D" uid="uid://c21x4fycri0sh" path="res://assests/texture/ui/bandera.png" id="2_2yglj"]
 [ext_resource type="Texture2D" uid="uid://1cgb46ldlqev" path="res://assests/texture/ui/trofeo_participacion.png" id="3_b55oh"]
@@ -18,6 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2yglj")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=2007141914]
 layout_mode = 1
