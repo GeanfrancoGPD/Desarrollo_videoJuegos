@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cxs6hktgwglpt"]
+
+[ext_resource type="Texture2D" uid="uid://b57tsk5fsyxrd" path="res://assests/texture/Mapa/Obtaculos/sacos/t.png" id="1_pkrhi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4fgov"]
+size = Vector2(347, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jx365"]
+size = Vector2(60, 84)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1001831632]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=594617245]
+texture = ExtResource("1_pkrhi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=328038160]
+position = Vector2(-0.5, -26.5)
+shape = SubResource("RectangleShape2D_4fgov")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1474848165]
+position = Vector2(11, 32)
+shape = SubResource("RectangleShape2D_jx365")

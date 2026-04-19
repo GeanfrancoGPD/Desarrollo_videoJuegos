@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dn4a6cv5au24i"]
+
+[ext_resource type="Texture2D" uid="uid://1sxd7qexslhg" path="res://assests/texture/Mapa/Obtaculos/sacos/horizontal corto.png" id="1_y04ng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4nioa"]
+size = Vector2(261, 44)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=102212822]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1741733825]
+texture = ExtResource("1_y04ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=962118664]
+position = Vector2(0.5, 19)
+shape = SubResource("RectangleShape2D_4nioa")

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c4e1umohm7xo0"]
+
+[ext_resource type="Texture2D" uid="uid://b37dflu062uwj" path="res://assests/texture/Mapa/Obtaculos/sacos/L derecha.png" id="1_orp8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_648g4"]
+size = Vector2(313, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mk5e7"]
+size = Vector2(72, 162)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=2041414024]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=81621999]
+texture = ExtResource("1_orp8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1064157518]
+position = Vector2(-0.5, 51)
+shape = SubResource("RectangleShape2D_648g4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=965524558]
+position = Vector2(117, -5)
+shape = SubResource("RectangleShape2D_mk5e7")

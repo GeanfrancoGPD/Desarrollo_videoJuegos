@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cubv010bpd8q6"]
+
+[ext_resource type="Texture2D" uid="uid://dtjfo0450kwh1" path="res://assests/texture/Mapa/Obtaculos/metal/metal 4.png" id="1_kw83r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_btoje"]
+size = Vector2(303, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw6eq"]
+size = Vector2(47, 105)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agiim"]
+size = Vector2(45, 103)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1347587572]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=542544155]
+texture = ExtResource("1_kw83r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1187228697]
+position = Vector2(2.5, -41)
+shape = SubResource("RectangleShape2D_btoje")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=1930729904]
+position = Vector2(-124.5, 24.5)
+shape = SubResource("RectangleShape2D_uw6eq")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=1296824440]
+position = Vector2(133.5, 25.5)
+shape = SubResource("RectangleShape2D_agiim")

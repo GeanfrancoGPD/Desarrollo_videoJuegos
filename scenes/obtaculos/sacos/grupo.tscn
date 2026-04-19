@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dvxfcdf7tc"]
+
+[ext_resource type="Texture2D" uid="uid://di3n6ldlexqnt" path="res://assests/texture/Mapa/Obtaculos/sacos/grupo.png" id="1_wehqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ubsp5"]
+size = Vector2(121, 72)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=94902360]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=62614525]
+texture = ExtResource("1_wehqk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=431085607]
+position = Vector2(0.5, 20)
+shape = SubResource("RectangleShape2D_ubsp5")
