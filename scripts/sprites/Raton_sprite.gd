@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-func efecto_dano():	
+func efecto_dano():
 	for i in range(6):
 		animate_sprite.modulate.a = 0.3
 		await get_tree().create_timer(0.1).timeout

@@ -2,9 +2,9 @@ extends Area2D
 
 @onready var bala: AnimatedSprite2D = $AnimatedSprite2D
 
-var velocidad_bala = 200
+var velocidad_bala = 500
 var direccion = Vector2.RIGHT
-var life_time := 2.0
+var life_time := 1.4
 var shooter: Node = null  # cambiado
 
 func _ready() -> void:
