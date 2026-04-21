@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://ovv7qstjsedd" path="res://assests/font/Pixelify_Sans/static/PixelifySans-Regular.ttf" id="1_n1eig"]
 [ext_resource type="Texture2D" uid="uid://c21x4fycri0sh" path="res://assests/texture/ui/bandera.png" id="2_2yglj"]
 [ext_resource type="Texture2D" uid="uid://1cgb46ldlqev" path="res://assests/texture/ui/trofeo_participacion.png" id="3_b55oh"]
+[ext_resource type="Texture2D" uid="uid://j2tbf465bb8" path="res://assests/texture/Menu/botones/25_mar_2026__12_34_40-removebg-preview.png" id="5_b55oh"]
 
 [sub_resource type="Gradient" id="Gradient_h8bcv"]
 colors = PackedColorArray(0, 0, 0, 1, 0.8784314, 0, 0.1882353, 1)
@@ -80,3 +81,14 @@ texture = ExtResource("2_2yglj")
 position = Vector2(263, 532)
 scale = Vector2(0.7659575, 0.7164179)
 texture = ExtResource("3_b55oh")
+
+[node name="Button" type="Button" parent="." unique_id=690709472]
+layout_mode = 0
+offset_left = 421.0
+offset_top = 496.0
+offset_right = 797.0
+offset_bottom = 595.0
+icon = ExtResource("5_b55oh")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

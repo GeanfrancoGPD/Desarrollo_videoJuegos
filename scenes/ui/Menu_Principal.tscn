@@ -7,10 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://j2tbf465bb8" path="res://assests/texture/Menu/botones/25_mar_2026__12_34_40-removebg-preview.png" id="3_wftd5"]
 [ext_resource type="Texture2D" uid="uid://oqame20mwg05" path="res://assests/texture/Menu/botones/creditos.png" id="5_wftd5"]
 [ext_resource type="AudioStream" uid="uid://stbxvo2mhb41" path="res://assests/musica/juego/funky-diesel.mp3" id="6_i1c5w"]
+[ext_resource type="PackedScene" uid="uid://d3fte5d288iia" path="res://scenes/ui/Pantalla_Opciones.tscn" id="8_wtdtk"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bj1xx"]
 
-[node name="Control" type="Control" unique_id=63805122]
+[node name="Control" type="Control" unique_id=63805122 node_paths=PackedStringArray("opciones")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +23,7 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wftd5")
+opciones = NodePath("Opciones")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1734877158]
 layout_mode = 1
@@ -91,7 +93,12 @@ flat = true
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1821060479]
 stream = ExtResource("6_i1c5w")
 autoplay = true
+bus = &"Music"
+
+[node name="Opciones" parent="." unique_id=985405780 instance=ExtResource("8_wtdtk")]
+visible = false
 
 [connection signal="pressed" from="VBoxContainer/ButtonJugar" to="." method="_on_button_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonOpciones" to="." method="_on_button_opciones_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonSalir" to="." method="_on_button_salir_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Button Creditos" to="." method="_on_button_creditos_pressed"]

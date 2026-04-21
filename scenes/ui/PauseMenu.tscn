@@ -8,6 +8,8 @@
 [sub_resource type="GDScript" id="GDScript_cup6r"]
 script/source = "extends CanvasLayer
 
+@export var options_menu : CanvasLayer
+
 func _ready():
 	hide()
 	process_mode = Node.PROCESS_MODE_ALWAYS 
@@ -43,6 +45,15 @@ func _on_volver_pressed():
 
 func _on_salir_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_opciones_pressed() -> void:
+	if not options_menu : return
+	
+	options_menu.visible = true
+	#options_menu.process_mode = Node.PROCESS_MODE_INHERIT
+	visible = false
+	
 "
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=1093253081]
@@ -101,4 +112,5 @@ flat = true
 
 [connection signal="pressed" from="Panel/VBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/opciones" to="." method="_on_opciones_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

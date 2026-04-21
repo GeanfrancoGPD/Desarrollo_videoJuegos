@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d04nxoa1nuu27" path="res://assests/texture/ui/corona.png" id="2_4vahd"]
 [ext_resource type="Texture2D" uid="uid://b1i0x802as8n4" path="res://assests/texture/ui/trofeo.png" id="3_h8bcv"]
 [ext_resource type="Texture2D" uid="uid://0hhsirqwpanm" path="res://assests/texture/ui/destello.png" id="4_jjw86"]
+[ext_resource type="Texture2D" uid="uid://j2tbf465bb8" path="res://assests/texture/Menu/botones/25_mar_2026__12_34_40-removebg-preview.png" id="6_kgbgo"]
 
 [sub_resource type="Gradient" id="Gradient_h8bcv"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 1, 1)
@@ -79,3 +80,14 @@ texture = ExtResource("4_jjw86")
 position = Vector2(473.99997, 574)
 scale = Vector2(0.15881765, 0.15480962)
 texture = ExtResource("4_jjw86")
+
+[node name="Button" type="Button" parent="." unique_id=800377837]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 501.0
+offset_right = 785.0
+offset_bottom = 600.0
+icon = ExtResource("6_kgbgo")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

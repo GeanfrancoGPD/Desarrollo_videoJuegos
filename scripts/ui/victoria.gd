@@ -11,5 +11,7 @@ func _ready():
 	player.get_data()
 	player.position = get_viewport_rect().size / 3
 	player.get_node("AnimatedSprite2D").play("Victoria")
-	
-	
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/Menu_Principal.tscn") 

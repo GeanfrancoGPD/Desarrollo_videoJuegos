@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dtx8g8ou775ds" path="res://assests/texture/construir/Construir_Raton.png" id="1_amah2"]
 [ext_resource type="Texture2D" uid="uid://dlu7d7dmysso3" path="res://assests/texture/construir/Construir_Paloma.png" id="1_xem2p"]
-[ext_resource type="AudioStream" uid="uid://b3ivvpod2i0og" path="res://assests/musica/SFX/construir.mp3" id="3_8plhu"]
+[ext_resource type="AudioStream" uid="uid://d3if1raqdnuwp" path="res://assests/musica/SFX/construir.mp3" id="3_8plhu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7kxgw"]
 atlas = ExtResource("1_xem2p")
@@ -84,15 +84,16 @@ animations = [{
 }],
 "loop": true,
 "name": &"Raton",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=33112518]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_7kxgw")
-animation = &"Paloma"
-frame_progress = 0.5541664
+animation = &"Raton"
+frame_progress = 0.1707631
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=592336969]
 stream = ExtResource("3_8plhu")
 autoplay = true
+bus = &"SFX"

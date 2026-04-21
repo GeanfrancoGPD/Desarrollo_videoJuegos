@@ -2,13 +2,13 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-uid="uid://cy47uwl6j6b3g"
-path="res://.godot/imported/mapa.mp3-2bd182985f3d576ec57811a1a8453ec1.mp3str"
+uid="uid://w8jw8mhdr313"
+path="res://.godot/imported/MAPA.mp3-9675b55bbbc170440071e497dda50e0a.mp3str"
 
 [deps]
 
-source_file="res://assests/musica/juego/mapa.mp3"
-dest_files=["res://.godot/imported/mapa.mp3-2bd182985f3d576ec57811a1a8453ec1.mp3str"]
+source_file="res://assests/musica/juego/MAPA.mp3"
+dest_files=["res://.godot/imported/MAPA.mp3-9675b55bbbc170440071e497dda50e0a.mp3str"]
 
 [params]
 

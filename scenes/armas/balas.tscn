@@ -59,9 +59,10 @@ shape = SubResource("CircleShape2D_ey8c2")
 position = Vector2(21, -22)
 scale = Vector2(-0.412, -0.378)
 sprite_frames = SubResource("SpriteFrames_kwbaq")
-animation = &"bala_roja"
+animation = &"bala_azul"
 autoplay = "bala_azul"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1435134483]
 stream = ExtResource("3_fpaym")
 autoplay = true
+bus = &"SFX"
