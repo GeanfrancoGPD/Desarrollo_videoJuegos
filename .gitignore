@@ -1,3 +1,10 @@
-# Godot 4+ specific ignores
+upload/Geanfranco_Piccioni_Mariangel_Campos_ProyectoFinal_PrimerAvance.rar
+upload/
 .godot/
-/android/
+addons/
+addons/ridiculous_coding/
+default_env.tres
+
+scenes/ui/toast.tscn
+scripts/ui/toast.gd
+scripts/ui/toast.gd.uid

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dwpyk303w04m4"]
 
-[ext_resource type="Texture2D" uid="uid://bh188t687uykk" path="res://assests/sprites/raton_sprites.png" id="1_0pn44"]
+[ext_resource type="Texture2D" uid="uid://bh188t687uykk" path="res://assests/sprites/Personajes/raton_sprites.png" id="1_0pn44"]
 [ext_resource type="Script" uid="uid://cugni7rmsfwph" path="res://scripts/sprites/Raton_sprite.gd" id="1_xudk8"]
 [ext_resource type="Texture2D" uid="uid://lyv3e1g3x10u" path="res://assests/sprites/raton_extras.png" id="2_uf3dl"]
 
@@ -139,9 +139,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_054xh")
 }],
-"loop": false,
+"loop": true,
 "name": &"Correr",
-"speed": 5.0
+"speed": 6.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -198,7 +198,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p6544")
 }],
-"loop": true,
+"loop": false,
 "name": &"Victoria",
 "speed": 5.0
 }]
@@ -206,23 +206,36 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k3qt"]
 size = Vector2(32, 67)
 
-[node name="Raton_sprite" type="Node2D" unique_id=409222725]
-position = Vector2(572, 349)
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fyt2c"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("AnimatedSprite2D:animation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath("AnimatedSprite2D:flip_h")
+properties/2/spawn = true
+properties/2/replication_mode = 1
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1418287853]
+[node name="Raton_sprite" type="CharacterBody2D" unique_id=1418287853]
 script = ExtResource("1_xudk8")
+vida = null
+velocidad = null
+player_id = null
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=703285920]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=703285920]
 position = Vector2(0, -53)
 sprite_frames = SubResource("SpriteFrames_lpn3q")
-animation = &"Bajar"
+animation = &"Victoria"
 autoplay = "Normal"
-frame_progress = 0.2152138
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1430320095]
-position = Vector2(3, -42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1430320095]
+position = Vector2(-1, -38)
 shape = SubResource("RectangleShape2D_7k3qt")
 
-[node name="bala" type="Marker2D" parent="CharacterBody2D" unique_id=333812926]
+[node name="bala" type="Marker2D" parent="." unique_id=333812926]
 unique_name_in_owner = true
 position = Vector2(43, -36)
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1392919925]
+replication_config = SubResource("SceneReplicationConfig_fyt2c")

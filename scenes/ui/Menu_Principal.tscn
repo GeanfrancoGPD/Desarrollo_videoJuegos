@@ -1,13 +1,16 @@
 [gd_scene format=3 uid="uid://byvcukyk3p02h"]
 
 [ext_resource type="Texture2D" uid="uid://bpslketn5knct" path="res://assests/texture/Menu/Pantalla de inicio de Paint War.png" id="1_qpdvi"]
-[ext_resource type="Texture2D" uid="uid://b6ofq40ke5qln" path="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview - copia (2).png" id="2_i5nob"]
-[ext_resource type="Texture2D" uid="uid://j2tbf465bb8" path="res://assests/texture/Menu/25_mar_2026__12_34_40-removebg-preview.png" id="3_wftd5"]
+[ext_resource type="Script" uid="uid://boln55gri4fsk" path="res://scripts/ui/menu_principal.gd" id="1_wftd5"]
+[ext_resource type="Texture2D" uid="uid://b6ofq40ke5qln" path="res://assests/texture/Menu/botones/25_mar_2026__12_34_40-removebg-preview - copia (2).png" id="2_i5nob"]
+[ext_resource type="Texture2D" uid="uid://j2tbf465bb8" path="res://assests/texture/Menu/botones/25_mar_2026__12_34_40-removebg-preview.png" id="3_wftd5"]
+[ext_resource type="Texture2D" uid="uid://bblg8w8cnws6s" path="res://assests/texture/Menu/botones/Crear_sala.png" id="3_wtdtk"]
+[ext_resource type="Texture2D" uid="uid://dvf1qbqgxt38e" path="res://assests/texture/Menu/botones/Unirse_sala.png" id="4_k6eap"]
+[ext_resource type="Texture2D" uid="uid://oqame20mwg05" path="res://assests/texture/Menu/botones/creditos.png" id="5_wftd5"]
+[ext_resource type="AudioStream" uid="uid://stbxvo2mhb41" path="res://assests/musica/juego/funky-diesel.mp3" id="6_i1c5w"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bj1xx"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v6bag"]
-load_path = "res://.godot/imported/25_mar_2026__12_34_40-removebg-preview - copia.png-9bdbd59ddd5ffcb99ad13d0cfdf7a5bd.ctex"
+content_margin_top = 20.0
 
 [node name="Control" type="Control" unique_id=63805122]
 layout_mode = 3
@@ -20,6 +23,7 @@ offset_right = 1.0
 offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wftd5")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1734877158]
 layout_mode = 1
@@ -48,15 +52,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 126.12799
 offset_top = 150.0
-offset_right = 417.23157
-offset_bottom = 335.15997
+offset_right = -80.0
+offset_bottom = -163.0
 theme_override_constants/separation = -23
 
-[node name="ButtonJugar" type="Button" parent="VBoxContainer" unique_id=1296753914]
+[node name="Crear_sala" type="Button" parent="VBoxContainer" unique_id=1296753914]
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bj1xx")
+icon = ExtResource("3_wtdtk")
+flat = true
+
+[node name="Unirse_sala" type="Button" parent="VBoxContainer" unique_id=2093952695]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bj1xx")
-icon = SubResource("CompressedTexture2D_v6bag")
+icon = ExtResource("4_k6eap")
 flat = true
 
 [node name="ButtonOpciones" type="Button" parent="VBoxContainer" unique_id=758531781]
@@ -72,3 +85,24 @@ theme_override_font_sizes/font_size = 26
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bj1xx")
 icon = ExtResource("3_wftd5")
 flat = true
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1686101438]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 525.0
+offset_right = 236.0
+offset_bottom = 598.0
+
+[node name="Button Creditos" type="Button" parent="VBoxContainer2" unique_id=305702381]
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+icon = ExtResource("5_wftd5")
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1821060479]
+stream = ExtResource("6_i1c5w")
+autoplay = true
+
+[connection signal="pressed" from="VBoxContainer/Crear_sala" to="." method="_on_button_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonSalir" to="." method="_on_button_salir_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Button Creditos" to="." method="_on_button_creditos_pressed"]

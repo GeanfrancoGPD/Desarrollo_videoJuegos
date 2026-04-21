@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dued3scwtgit8"]
+
+[ext_resource type="Script" uid="uid://csjq0adwghqsc" path="res://scripts/ventanas/Creditosl.gd" id="1_2usq2"]
+[ext_resource type="Texture2D" uid="uid://ckxqetq4jrmqr" path="res://assests/texture/Menu/fondo creditos.png" id="2_5hw77"]
+[ext_resource type="Texture2D" uid="uid://coercynxkpcgv" path="res://assests/texture/Menu/botones/volver.png" id="3_a7655"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hc32g"]
+font_size = 18
+
+[node name="Control" type="Control" unique_id=987514143]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2usq2")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=699582553]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5hw77")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=722018666]
+layout_mode = 1
+offset_right = 1150.0
+offset_bottom = 550.0
+theme_override_constants/separation = 40
+
+[node name="Titulo" type="Label" parent="VBoxContainer" unique_id=2136597709]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.9843137, 0.6745098, 0.22352941, 1)
+theme_override_colors/font_shadow_color = Color(0.8832791, 0.5142396, 0.50575715, 0)
+theme_override_colors/font_outline_color = Color(0.82146376, 0.61819965, 0.11585458, 1)
+theme_override_font_sizes/font_size = 36
+text = "PAINT WAR: FLAG SIEGE"
+horizontal_alignment = 1
+
+[node name="Autores" type="Label" parent="VBoxContainer" unique_id=961936096]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Desarrollado por Geanfranco Piccopni
+                                Mariangel Campos"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Universidad" type="Label" parent="VBoxContainer" unique_id=509882494]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Realizado en Universidad Rafael Urdaneta"
+horizontal_alignment = 1
+
+[node name="Programador" type="Label" parent="VBoxContainer" unique_id=782916414]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Programador Geanfrando Piccioni"
+horizontal_alignment = 1
+
+[node name="Diseñador" type="Label" parent="VBoxContainer" unique_id=30922209]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Diseñador Mariangel Campos"
+label_settings = SubResource("LabelSettings_hc32g")
+horizontal_alignment = 1
+
+[node name="Arte" type="Label" parent="VBoxContainer" unique_id=600914852]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Arte  Creacion Propia + IA"
+horizontal_alignment = 1
+
+[node name="Musica y sonido" type="Label" parent="VBoxContainer" unique_id=434151668]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Musica Y SFX recursos Libres"
+horizontal_alignment = 1
+
+[node name="Adicionales" type="Label" parent="VBoxContainer" unique_id=256899855]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="." unique_id=631936824]
+layout_mode = 0
+offset_left = 460.0
+offset_top = 514.0
+offset_right = 718.0
+offset_bottom = 618.0
+theme_override_font_sizes/font_size = 31
+icon = ExtResource("3_a7655")
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

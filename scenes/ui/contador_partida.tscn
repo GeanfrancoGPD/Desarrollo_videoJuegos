@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c70bdx283ex7r"]
+
+[ext_resource type="Script" uid="uid://d3mxd6lmv6v1p" path="res://scripts/ui/contador_partida.gd" id="1_xkb14"]
+
+[node name="contador_partida" type="HBoxContainer" unique_id=1491076290]
+offset_left = -74.0
+offset_top = -69.0
+offset_right = 74.0
+offset_bottom = 8.0
+theme_override_constants/separation = 5
+script = ExtResource("1_xkb14")
+
+[node name="Label" type="Label" parent="." unique_id=1082716468]
+layout_mode = 2
+text = "1"
+
+[node name="Label2" type="Label" parent="." unique_id=636042917]
+layout_mode = 2
+text = ":"
+
+[node name="Label3" type="Label" parent="." unique_id=847828199]
+layout_mode = 2
+text = "0"

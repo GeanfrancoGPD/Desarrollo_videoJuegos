@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://b3tqqltg4hdlk"]
+
+[ext_resource type="Texture2D" uid="uid://ckxqetq4jrmqr" path="res://assests/texture/Menu/fondo creditos.png" id="1_am2vt"]
+[ext_resource type="Script" uid="uid://c8guw1s1xlq3g" path="res://scripts/ventanas/host.gd" id="1_pmb5r"]
+[ext_resource type="Texture2D" uid="uid://dhigmqrjd3ftj" path="res://assests/texture/ui/Info_partida.png" id="3_ayl6b"]
+[ext_resource type="Texture2D" uid="uid://stmltyebte66" path="res://assests/texture/ui/info_mapa.png" id="4_ayl6b"]
+[ext_resource type="Texture2D" uid="uid://0dvnybvwqrvj" path="res://assests/texture/Menu/botones/Volver2.png" id="5_ejw00"]
+[ext_resource type="Texture2D" uid="uid://bchfmbnlq8t1p" path="res://assests/texture/Menu/botones/Iniciar_partida.png" id="6_q526x"]
+[ext_resource type="Texture2D" uid="uid://coyop4v04q4gr" path="res://assests/texture/ui/Foto_mapa_1.png" id="7_wk67o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q526x"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[node name="Control" type="Control" unique_id=1508975026]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pmb5r")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=127263887]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -8.0
+offset_right = 1247.0
+offset_bottom = 834.0
+texture = ExtResource("1_am2vt")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=883567110]
+layout_mode = 0
+offset_left = 841.0
+offset_top = 30.0
+offset_right = 1127.0
+offset_bottom = 177.0
+texture = ExtResource("3_ayl6b")
+expand_mode = 1
+
+[node name="#_jugadores" type="RichTextLabel" parent="TextureRect/TextureRect" unique_id=1356494653]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 32.0
+offset_right = 279.0
+offset_bottom = 94.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Numero de jugadores: "
+
+[node name="Ip_address" type="RichTextLabel" parent="TextureRect/TextureRect" unique_id=1292933048]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 98.0
+offset_right = 263.0
+offset_bottom = 126.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Ip del host:"
+
+[node name="TextureRect2" type="TextureRect" parent="TextureRect" unique_id=824642894]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 20.0
+offset_right = 240.0
+offset_bottom = 161.0
+texture = ExtResource("4_ayl6b")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="TextureRect" unique_id=1537525570]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 521.0
+offset_right = 273.0
+offset_bottom = 617.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_q526x")
+icon = ExtResource("5_ejw00")
+
+[node name="Button2" type="Button" parent="TextureRect" unique_id=34372484]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 551.0
+offset_right = 1137.0
+offset_bottom = 620.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_q526x")
+icon = ExtResource("6_q526x")
+
+[node name="FotoMapa1" type="Sprite2D" parent="." unique_id=1974909793]
+position = Vector2(128.00002, 86)
+scale = Vector2(0.16132072, 0.13420299)
+texture = ExtResource("7_wk67o")
