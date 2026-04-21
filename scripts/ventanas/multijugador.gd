@@ -127,22 +127,26 @@ func player_muerto(id:int):
 		terminar_partida.rpc_id(id, false, data_muerto)
 	
 
-@rpc("call_local")
+@rpc("any_peer", "call_local")
 func terminar_partida(es_ganador: bool, data):
 	print("Es ganador %s y data %s" % [es_ganador, data])
-	# cambiar escena
+	
 	var escena
-	if es_ganador == true: 
+	if es_ganador:
 		escena = load("uid://dw4scvr5vno00").instantiate()
-	else :
+	else:
 		escena = load("uid://hd5whowbygaf").instantiate()
-			
+
 	escena.player_data = data
 	escena.es_ganador = es_ganador
-	
-	get_tree().current_scene.queue_free()
-	get_tree().root.add_child(escena)
-	
+
+	# NO liberar escena actual
+	# NO queue_free aquí
+
+	get_tree().paused = false
+
+	# cambiar escena de forma segura en cliente
+	get_tree().call_deferred("change_scene_to_node", escena)
 	
 @rpc("any_peer", "call_local")
 func game_over(ganador):
