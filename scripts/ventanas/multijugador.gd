@@ -14,6 +14,7 @@ var invulnerable:bool
 @onready var world: Node2D = $world
 @onready var camera_2d: Camera2D = $ui/Camera2D
 @onready var barra_vida: Control = $ui/Camera2D/barra_vida
+@onready var IU: Label = $IU/Contador
 
 @onready var ui: Node2D = $ui
 
@@ -23,11 +24,12 @@ var invulnerable:bool
 	#pass
 func _ready() -> void:
 	ui.hide()
+	IU.hide()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if player_local:
-		camera_2d.global_position = player_local.global_position
+		camera_2d.global_position = player_local.global_position.clamp(Vector2(-457, -409), Vector2(1730, 1360))
 		barra_vida.actualizar(player_local.vida, player_local.vida_maxima)
 
 func _on_host_pressed() -> void:
@@ -42,6 +44,7 @@ func _on_host_pressed() -> void:
 	_on_peer_conneted()
 	center_container.hide()
 	ui.show()
+	IU.show()
 
 func _on_join_pressed() -> void:
 	peer.create_client("localhost", 3015)
@@ -57,7 +60,8 @@ func _on_join_pressed() -> void:
 	
 	# crear jugador local
 	spawn_player.rpc(multiplayer.get_unique_id())
-	ui.show()	
+	ui.show()
+	IU.show()
 
 func _on_peer_conneted(id: int = 1):
 	if id == multiplayer.get_unique_id():

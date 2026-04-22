@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://8sukjxnfof8a" path="res://scripts/ventanas/multijugador.gd" id="1_dnvny"]
 [ext_resource type="PackedScene" uid="uid://c8anj2p1h7gm4" path="res://scenes/ui/barra_vida.tscn" id="2_qxfma"]
 [ext_resource type="Texture2D" uid="uid://ckxqetq4jrmqr" path="res://assests/texture/Menu/fondo creditos.png" id="2_r4orx"]
-[ext_resource type="PackedScene" uid="uid://c70bdx283ex7r" path="res://scenes/ui/contador_partida.tscn" id="3_r4orx"]
 
 [sub_resource type="Theme" id="Theme_qxfma"]
 
@@ -32,6 +31,33 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxfma"]
+bg_color = Color(0.003921569, 0.11764706, 0.9882353, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0032387665, 0.020797972, 0.6471493, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="LabelSettings" id="LabelSettings_r4orx"]
+font_size = 42
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 9
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="GDScript" id="GDScript_qxfma"]
+script/source = "extends Label
+
+func _process(_delta: float) -> void:
+	text = str(Movimiento.cantidad_balas)
+	
+"
 
 [node name="multijugador" type="Node2D" unique_id=1426047188]
 script = ExtResource("1_dnvny")
@@ -86,12 +112,22 @@ offset_top = -252.0
 offset_right = -333.0
 offset_bottom = -212.0
 
-[node name="contador_partida" parent="ui/Camera2D" unique_id=1491076290 instance=ExtResource("3_r4orx")]
-z_index = 10
-offset_left = 399.0
-offset_top = -307.0
-offset_right = 550.0
-offset_bottom = -229.0
+[node name="IU" type="CanvasLayer" parent="." unique_id=1625215955]
+
+[node name="Contador" type="Label" parent="IU" unique_id=856991958]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -111.0
+offset_top = 33.0
+offset_right = -37.0
+offset_bottom = 95.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_qxfma")
+text = " 10 "
+label_settings = SubResource("LabelSettings_r4orx")
+horizontal_alignment = 1
+script = SubResource("GDScript_qxfma")
 
 [connection signal="pressed" from="Menu/VBoxContainer/host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/join" to="." method="_on_join_pressed"]

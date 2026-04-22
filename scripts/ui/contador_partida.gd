@@ -5,6 +5,7 @@ extends Control
 @onready var p2: Label = $Label3
 
 
+
 func _ready():
 	actualizar(0,0)
 

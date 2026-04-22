@@ -1,6 +1,10 @@
 extends Node
-
 class_name Movimiento
+
+static var cantidad_balas : int = 10
+
+var elapsed_time : float = 0
+
 var velocity : Vector2 = Vector2.ZERO
 var shooting_timer : float = 0
 var shooting_cooldown: float = 0.3
@@ -8,6 +12,13 @@ const Balas = preload("res://scenes/armas/balas.tscn")
 
 func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bala: Marker2D, Player_nodo: Node, velocidad: float) -> Vector2:
 	var direction = Vector2.ZERO
+
+	if not cantidad_balas : elapsed_time += delta
+	if elapsed_time > 15 : 
+		cantidad_balas = 10
+		elapsed_time = 0
+
+
 
 	# MOVIMIENTO
 	if Input.is_action_pressed("right"): direction.x += 1
@@ -54,6 +65,9 @@ func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bal
 	return velocity
 
 func Disparar(Player_nodo: Node, animate_sprite: AnimatedSprite2D, delta:float, main_node: Node):
+	if cantidad_balas==0 : return
+	cantidad_balas-=1
+	
 	velocity = Vector2.ZERO
 
 	# Dirección real 360°	
