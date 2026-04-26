@@ -2,8 +2,11 @@ extends Control
 
 
 func _on_button_jugar_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/mapa/multijugador.tscn")
-
+	get_tree().change_scene_to_file("res://scenes/ui/host.tscn")
+	
+func _on_unirse_sala_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/ui/join.tscn")
+	pass # Replace with function body.
 
 func _on_button_salir_pressed() -> void:
 	get_tree().quit()

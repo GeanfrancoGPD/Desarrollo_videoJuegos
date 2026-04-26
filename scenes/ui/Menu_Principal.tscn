@@ -104,5 +104,6 @@ stream = ExtResource("6_i1c5w")
 autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Crear_sala" to="." method="_on_button_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Unirse_sala" to="." method="_on_unirse_sala_pressed"]
 [connection signal="pressed" from="VBoxContainer/ButtonSalir" to="." method="_on_button_salir_pressed"]
 [connection signal="pressed" from="VBoxContainer2/Button Creditos" to="." method="_on_button_creditos_pressed"]

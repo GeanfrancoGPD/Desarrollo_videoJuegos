@@ -53,13 +53,13 @@ func move_character(animate_sprite: AnimatedSprite2D, delta: float, position_bal
 	
 	return velocity
 
-func Disparar(Player_nodo: Node, animate_sprite: AnimatedSprite2D, delta:float, main_node: Node):
+func Disparar(Player_nodo: Node, animate_sprite: AnimatedSprite2D, delta: float, _main_node: Node):
 	velocity = Vector2.ZERO
 
 	# Dirección real 360°	
 	var direccion = (Player_nodo.get_global_mouse_position() - Player_nodo.global_position).normalized()
 		
-	main_node.spawn_bala.rpc(
+	Multijugador.spawn_bala.rpc(
 		Player_nodo.global_position + direccion * 20,
 		direccion,
 		Player_nodo.get_multiplayer_authority()

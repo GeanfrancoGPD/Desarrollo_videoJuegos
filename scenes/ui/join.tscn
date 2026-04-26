@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://dfd82uoukkno5"]
+
+[ext_resource type="Script" uid="uid://otkpcqxd6j7v" path="res://scripts/ventanas/join.gd" id="1_g7law"]
+[ext_resource type="Texture2D" uid="uid://ckxqetq4jrmqr" path="res://assests/texture/Menu/fondo creditos.png" id="1_jqe0v"]
+[ext_resource type="Texture2D" uid="uid://0dvnybvwqrvj" path="res://assests/texture/Menu/botones/Volver2.png" id="2_7o7w8"]
+[ext_resource type="Texture2D" uid="uid://dvf1qbqgxt38e" path="res://assests/texture/Menu/botones/Unirse_sala.png" id="3_g7law"]
+[ext_resource type="Texture2D" uid="uid://c0nww55xcut1d" path="res://assests/texture/Menu/Ingrese_Ip.png" id="4_7o7w8"]
+[ext_resource type="Texture2D" uid="uid://2l8ndcl4hn28" path="res://assests/texture/Menu/Barra_nombre.png" id="6_hfg00"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hfg00"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[node name="Control" type="Control" unique_id=915598643]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g7law")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=829767384]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -8.0
+offset_right = 1247.0
+offset_bottom = 834.0
+texture = ExtResource("1_jqe0v")
+
+[node name="Volver" type="Button" parent="TextureRect" unique_id=1889241001]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 521.0
+offset_right = 273.0
+offset_bottom = 617.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfg00")
+icon = ExtResource("2_7o7w8")
+
+[node name="Unirse" type="Button" parent="TextureRect" unique_id=338855283]
+layout_mode = 0
+offset_left = 919.0
+offset_top = 551.0
+offset_right = 1137.0
+offset_bottom = 620.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hfg00")
+icon = ExtResource("3_g7law")
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect" unique_id=1626860832]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 352.0
+offset_right = 538.0
+offset_bottom = 466.0
+mouse_filter = 2
+texture = ExtResource("4_7o7w8")
+expand_mode = 1
+
+[node name="Ip" type="LineEdit" parent="TextureRect/TextureRect" unique_id=718483122]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66400003
+anchor_top = 0.64400005
+anchor_right = 0.703
+anchor_bottom = 0.669
+offset_left = -168.63202
+offset_top = -42.416008
+offset_right = 47.07196
+offset_bottom = -14.266006
+
+[node name="TextureRect3" type="TextureRect" parent="TextureRect" unique_id=1166839013]
+layout_mode = 0
+offset_left = 27.0
+offset_top = 180.0
+offset_right = 540.0
+offset_bottom = 294.0
+mouse_filter = 2
+texture = ExtResource("6_hfg00")
+expand_mode = 1
+
+[node name="Nombre" type="LineEdit" parent="TextureRect/TextureRect3" unique_id=744742472]
+z_index = 10
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.66400003
+anchor_top = 0.64400005
+anchor_right = 0.703
+anchor_bottom = 0.669
+offset_left = -168.63202
+offset_top = -42.416008
+offset_right = 47.07196
+offset_bottom = -14.266006
+
+[connection signal="pressed" from="TextureRect/Volver" to="." method="_on_volver_pressed"]
+[connection signal="pressed" from="TextureRect/Unirse" to="." method="_on_unirse_pressed"]
+[connection signal="text_changed" from="TextureRect/TextureRect/Ip" to="TextureRect/TextureRect" method="_on_line_edit_text_changed"]
+[connection signal="text_changed" from="TextureRect/TextureRect3/Nombre" to="TextureRect/TextureRect3" method="_on_line_edit_text_changed"]
